@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import './css/App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Recipes from './components/Recipes';
 import RandomRecipes from './components/RandomRecipes';
-import SearchBar from './components/SearchBar';
 import RecipeInfo from './components/RecipeInfo';
 import Footer from './components/Footer';
 
@@ -17,8 +17,7 @@ function App() {
   return (
     <div className={`App ${searchQuery ? 'search-mode' : 'random-mode'}`}>
       <Router>
-        <Navbar />
-        <SearchBar onSearch={handleSearch} />
+        <Navbar onSearch={handleSearch} />
         <Routes>
           <Route
             path="/"

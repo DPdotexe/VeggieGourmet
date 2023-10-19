@@ -1,32 +1,19 @@
 import React from 'react';
+import SearchBar from './SearchBar';
+import { useNavigate } from 'react-router-dom'; 
+import '../css/Navbar.css';
 
-const navbarStyle = {
-  backgroundColor: '#008000',
-  color: 'white',
-  padding: '10px',
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center', 
-  position: 'fixed',
-  top: '0',
-  left: '0',
-  right: '0',
-  zIndex: '1',
-};
+const Navbar = ({ onSearch }) => {
+  const navigate = useNavigate(); 
 
-const logoStyle = {
-  display: 'flex',
-  alignItems: 'center', 
-};
+  const handleLogoClick = () => {
+    navigate('/'); 
+    window.location.reload(); 
+  };
 
-const textContainerStyle = {
-  marginLeft: '5px',
-};
-
-const Navbar = () => {
   return (
-    <nav style={navbarStyle}>
-      <div style={logoStyle}>
+    <nav className="navbar">
+      <div className="logo" onClick={handleLogoClick}>
         <img
           src={process.env.PUBLIC_URL + '/img/veggiegourmetlogo.png'}
           width="30"
@@ -34,10 +21,11 @@ const Navbar = () => {
           className="d-inline-block align-top"
           alt="logo"
         />
-        <div style={textContainerStyle}>
+        <div className="text-container">
           <span style={{ fontWeight: 'bold' }}>VeggieGourmet</span>
         </div>
       </div>
+      <SearchBar onSearch={onSearch} />
     </nav>
   );
 };

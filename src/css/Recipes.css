@@ -1,145 +1,185 @@
-/* Stili per il container delle ricette */
+
 .recipe-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0px 0px 5px 0px #000000;
+  background: #FFFFFF; 
+  border: 1px solid #ddd;
+  border-radius: 10px;
   padding: 20px;
-  max-width: 850px;
-  margin: 0 auto;
-  margin-bottom: 80px;
-  margin-top: 20px;
+  max-width: 1400px;
+  margin: 20px auto;
   text-align: center;
   position: relative;
+  margin-top:120px;
+  margin-bottom:80px;
 }
-
-/* Stili per le cards delle ricette */
 .recipe-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f5f5f5;
+  background-color: #f5f5f5; 
   border-radius: 10px;
   padding: 20px;
   transition: transform 0.3s ease, background-color 0.3s ease;
-  max-width: 200px;
+  max-width: 390px;
   margin: 10px;
   text-align: center;
 }
-/* Aggiungi il colore di hover amaranto */
+
 .recipe-card:hover {
   background-color: #e52b50;
   color: #fff;
 }
 
-/* Stili per il titolo delle ricette */
-.recipe-card .recipe-title {
-  font-size: 16px;
-  color: #333;
-  font-weight: bold;
-  margin-top: 10px;
-  max-width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: color 0.3s ease;
-  margin-bottom: 10px;
+.recipe-card a {
+  text-decoration: none;
+ 
 }
-a {
-  text-decoration: none !important;
-}  
-/* Stili per le immagini delle ricette */
 .recipe-card .recipe-image {
   margin-top: 10px;
   max-width: 100%;
   height: auto;
 }
 
-/* Media Query per schermi di larghezza <= 768px (mobile) */
+.recipe-card h2.recipe-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #000; 
+}
+
+a:hover {
+  text-decoration: none;
+  color: #e52b50; 
+}
+
+.recipe-card a:hover {
+  text-decoration: none;
+}
+
+/* responsive */
+
 @media (max-width: 768px) {
-.recipe-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  .card:hover {
+    background-color: #e52b50;
+    color: white;
+    transition: background-color 0.3s;
+  }
 }
 
-.recipe-card {
-  width: 100%;
-  max-width: 200px; /* Larghezza massima per la card */
-  margin: 10px;
+
+@media (max-width: 280px) and (max-height: 600px) {
+  .navbar {
+    padding-right: 20px; 
+  }
+  .search-bar {
+    margin-left: 20px;
+  }
+  .search-bar form {
+    width: 100%; 
+  }
+  .search-input {
+    width: 100%;
+  }
+  .search-button {
+    width: 5%; 
+  }
 }
+@media (max-width: 375px) and (max-height: 667px) {
+  .navbar {
+    padding-right: 20px;
+  }
+  .search-bar {
+    margin-left: 20px; 
+  }
+  .search-bar form {
+    width: 100%; 
+  }
+  .search-input {
+    width: 90%; 
+  }
+  .search-button {
+    width: 5%; 
+  }
 }
 
-/* Media Query per schermi di larghezza <= 768px (mobile) */
+@media (max-width: 414px) and (max-height: 896px) {
+  .search-bar {
+    margin-left: 10px; 
+  }
+}
+
 @media (max-width: 768px) {
   .recipe-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 820px;
+    margin: 0 auto;
   }
   .recipe-card {
     width: 100%;
-    max-width: 200px; /* Larghezza massima per la card mobile */
+    max-width: 200px;
     margin: 10px;
   }
 }
-/* Media Query per il Galaxy Fold */
-@media (min-width: 280px) and (max-width: 653px) {
-  .recipe-container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr); /* Utilizza una singola colonna */
-    gap: 10px; /* Riduci lo spazio tra le cards */
-    max-width: 220px; /* Limita la larghezza massima del container */
-    margin: 0 auto; /* Centra il container orizzontalmente */
-  }
 
-  .recipe-card {
-    width: 100%;
-    max-width: 100%; /* Larghezza massima per adattarsi al container padre */
-    margin: 0 auto; /* Centra le cards orizzontalmente */
-  }
-}
-
-
-
-@media (max-width: 768px) {
+@media (width: 820px) and (height: 1180px) {
   .recipe-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 820px; /* Larghezza massima per il container */
-    margin: 0 auto;
+    max-width: 800px; 
+    margin: 0 auto; 
   }
   .recipe-card {
-    width: 100%;
-    max-width: 200px; /* Larghezza massima per la card */
-    margin: 10px;
+    width: 200px; 
   }
 }
 
-/* Media Query per schermi di larghezza > 768px e <= 820px (820x1180) */
-@media (min-width: 769px) and (max-width: 820px) {
+@media (width: 912px) and (height: 1368px) {
   .recipe-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 colonne per riga */
-    gap: 20px;
-    max-width: 550px; /* Larghezza massima per il container */
-    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr); 
+    max-width: 1000px; 
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
   }
   .recipe-card {
-    width: 100%;
-    max-width: 200px; /* Larghezza massima per la card */
-    margin: 10px;
+    width: 200px; 
   }
 }
 
-/* Media Query per schermi di larghezza >= 821px (desktop) */
-@media (min-width: 821px) {
+@media (width: 1024px) and (height: 600px) {
   .recipe-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colonne per riga */
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .recipe-card {
+    width: 200px;
   }
 }
+
+@media (width: 1280px) and (height: 800px) {
+  .recipe-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px; 
+    margin: 0 auto; 
+  }
+  .recipe-card {
+    width: 200px;
+  }
+}
+

@@ -12,8 +12,9 @@ function Recipes({ query }) {
         params: {
           apiKey: process.env.REACT_APP_API_KEY,
           query: query,
-          number: 12,
+          number: 36,
           diet: 'vegetarian',
+          addRecipeInformation: true, 
         },
       })
       .then((response) => {
@@ -31,6 +32,10 @@ function Recipes({ query }) {
           <div className="recipe-card">
             <h2 className="recipe-title">{recipe.title}</h2>
             <img src={recipe.image} alt={recipe.title} className="recipe-image" />
+            <div className="recipe-details">
+              <p><strong>Cooking Time:</strong> {recipe.readyInMinutes} minutes</p>
+              <p><strong>Servings:</strong> {recipe.servings}</p>
+            </div>
           </div>
         </Link>
       ))}
