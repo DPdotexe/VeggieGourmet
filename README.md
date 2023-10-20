@@ -24,8 +24,8 @@ VeggieGourmet is a web application that allows users to discover and explore veg
 
 1. Clone the repository.
 
-```bash
-   git clone https://github.com/DPdotexe/veggiegourmet.git
+```shell
+git clone https://github.com/DPdotexe/veggiegourmet.git
 ```
 2. Navigate to the project directory using the command line.
 
