@@ -26,7 +26,7 @@ VeggieGourmet is a web application that allows users to discover and explore veg
 
 2. Navigate to the project directory using the command line.
 
-3. Install the project dependencies by running:
+3. Install the project dependencies by running: npm start
 
 
 4. Create a `.env` file in the project's root directory and add your Spoonacular API key as follows:
