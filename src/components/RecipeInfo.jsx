@@ -112,6 +112,16 @@ function RecipeInfo() {
                 ))}
               </div>
             </div>
+            <div className="section">
+              <h3 className="section-title">Recipe Similar</h3>
+              <ul>
+                {recipeInfo.recipeSimilar.map((similarRecipe, index) => (
+                  <li key={index} className="list-item">
+                    {similarRecipe}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
           <Link to="/" className="footer-link">
             <FaArrowLeft className="back-icon" />
