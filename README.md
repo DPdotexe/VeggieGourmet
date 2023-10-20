@@ -22,7 +22,10 @@ VeggieGourmet is a web application that allows users to discover and explore veg
 
 ## Getting Started
 
-1. Clone this repository to your local machine.
+1. Clone the repository.
+
+   ```shell
+   git clone https://github.com/DPdotexe/veggiegourmet.git
 
 2. Navigate to the project directory using the command line.
 
@@ -41,14 +44,6 @@ npm start
 ```
 
 6. Open your web browser and go to `http://localhost:3000` to use the application.
-
-## Usage
-
-- Enter a search query in the search bar to find specific recipes. Press "Enter" or click the search button.
-
-- Click on a recipe card to view its details, including ingredients and cooking instructions.
-
-- Explore random vegetarian recipes by visiting the homepage.
 
 ## Contributors
 
