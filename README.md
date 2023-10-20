@@ -36,6 +36,8 @@ npm install
 
 4. Create a `.env` file in the project's root directory and add your Spoonacular API key as follows:
 
+```vbnet
+REACT_APP_API_KEY=YOUR_API_KEY
 
 5. Start the development server by running:
 
