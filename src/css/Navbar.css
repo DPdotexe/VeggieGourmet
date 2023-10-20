@@ -13,7 +13,6 @@
   z-index: 1;
   height: 40px;
 }
-
 .logo {
   display: flex;
   align-items: center;
@@ -22,21 +21,16 @@
 .text-container {
   margin-left: 5px;
 }
-
-
 .logo img {
   width: 30px;
   height: 30px;
   margin-right: 5px;
 }
-
 @media (max-width: 768px) {
   .navbar {
     height: 40px; 
   }
 }
-
-
 @media (max-width: 480px) {
   .navbar {
     height: 30px; 

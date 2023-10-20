@@ -11,25 +11,58 @@ function SearchBar({ onSearch }) {
     setQuery(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSearchInputValidation = () => {
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) {
+      if (query.trim() === '') {
+        searchInput.setCustomValidity('Please enter a valid query.');
+        searchInput.classList.add('search-error');
+      } else {
+        searchInput.setCustomValidity('');
+        searchInput.classList.remove('search-error');
+      }
+    }
+  };
+
+  const handleFormSubmit = (e) => {
     e.preventDefault();
-    const formattedQuery = query.toLowerCase().replace(/\s/g, '');
-    onSearch(formattedQuery);
-    navigate('/');
+    handleSearchInputValidation();
+    const searchInput = document.getElementById('search-input');
+    if (!searchInput.validity.customError) {
+      const formattedQuery = query.toLowerCase().replace(/\s/g, '');
+      onSearch(formattedQuery);
+      navigate('/');
+    }
+  };
+
+  const handleSearchButtonClick = () => {
+    const searchInput = document.getElementById('search-input');
+    handleSearchInputValidation(); // Esegue la validazione prima della ricerca.
+
+    if (!searchInput.validity.customError) {
+      const formattedQuery = query.toLowerCase().replace(/\s/g, '');
+      onSearch(formattedQuery);
+      navigate('/');
+    }
   };
 
   return (
     <div className="search-bar">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleFormSubmit}>
         <input
           type="text"
+          id="search-input"
           placeholder="Type your recipes...."
           value={query}
           onChange={handleInputChange}
+          onBlur={handleSearchInputValidation}
           className="search-input"
-          required
         />
-        <button type="submit" className="search-button">
+        <button
+          type="submit"
+          onClick={handleSearchButtonClick}
+          className="search-button"
+        >
           <FaSearch />
         </button>
       </form>

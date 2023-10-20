@@ -77,7 +77,6 @@ function RecipeInfo() {
             src={recipeInfo.image || '../img/no-image.png'}
             alt={recipeInfo.title}
             className="recipe-image"
-            style={{ width: '100%', height: 'auto' }}
           />
           <div className="description-box">
             <p

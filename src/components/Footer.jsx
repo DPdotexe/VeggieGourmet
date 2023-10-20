@@ -1,20 +1,14 @@
 import React from 'react';
+import { FaGithub } from 'react-icons/fa';
+import '../css/Footer.css';
 
 function Footer() {
-  const footerStyle = {
-    backgroundColor: '#008000',
-    color: 'white',
-    textAlign: 'center',
-    padding: '10px',
-    position: 'fixed', 
-    left: '0',
-    bottom: '0',
-    width: '100%',
-  };
-
   return (
-    <footer style={footerStyle}>
-      &copy; Copyright DP 2023. All rights reserved.
+    <footer className="footer-container">
+      <a href="https://github.com/DPdotexe" target="_blank" rel="noopener noreferrer" className="github-link">
+        <FaGithub />
+      </a>
+      <div className="copyright-text">&copy; Copyright DP 2023. All rights reserved.</div>
     </footer>
   );
 }

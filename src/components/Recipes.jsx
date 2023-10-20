@@ -48,7 +48,6 @@ function Recipes({ query }) {
                  src={recipe.image || '../img/no-image.png'} 
                 alt={recipe.title}
                 className="recipe-image"
-                style={{ width: '100%', height: 'auto' }}
                 />
                 <div className="recipe-details">
                   <p><FaClock /> {recipe.readyInMinutes} minutes</p>
