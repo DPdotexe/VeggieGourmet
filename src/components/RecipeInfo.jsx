@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'; 
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import { ClipLoader } from 'react-spinners';
 import '../css/RecipeInfo.css';
@@ -12,6 +12,7 @@ function RecipeInfo() {
   const [steps, setSteps] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -46,11 +47,12 @@ function RecipeInfo() {
       } catch (error) {
         console.error('Errore nella chiamata API:', error);
         setLoading(false);
+        navigate('/error');
       }
     };
 
     fetchData();
-  }, [id]);
+  }, [id, navigate]);
 
   useEffect(() => {
     if (recipeInfo) {
@@ -71,13 +73,12 @@ function RecipeInfo() {
       ) : (
         <div>
           <h2 className="recipe-title">{recipeInfo.title}</h2>
-          {recipeInfo.image && (
-            <img
-              src={recipeInfo.image}
-              alt={recipeInfo.title}
-              className="recipe-image"
-            />
-          )}
+          <img
+            src={recipeInfo.image || '../img/no-image.png'}
+            alt={recipeInfo.title}
+            className="recipe-image"
+            style={{ width: '100%', height: 'auto' }}
+          />
           <div className="description-box">
             <p
               className="recipe-description"
