@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import { ClipLoader } from 'react-spinners';
-import '../css/RecipeInfo.css';
+import '../css/RecipeInfo.css'; 
 
 function RecipeInfo() {
   const { id } = useParams();
@@ -111,16 +111,6 @@ function RecipeInfo() {
                   </p>
                 ))}
               </div>
-            </div>
-            <div className="section">
-              <h3 className="section-title">Recipe Similar</h3>
-              <ul>
-                {recipeInfo.recipeSimilar.map((similarRecipe, index) => (
-                  <li key={index} className="list-item">
-                    {similarRecipe}
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
           <Link to="/" className="footer-link">
