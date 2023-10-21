@@ -8,6 +8,8 @@ import RecipeInfo from './components/RecipeInfo/RecipeInfo';
 import Footer from './components/Footer/Footer';
 import ErrorPage from './components/Error/ErrorPage';
 
+// App setup
+
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -16,6 +18,7 @@ function App() {
   };
   
   // react router
+  
   return (
     <div className={`App ${searchQuery ? 'search-mode' : 'random-mode'}`}>
       <Router>

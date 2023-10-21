@@ -1,6 +1,8 @@
 import React from 'react';
 import '../../css/Error.css';
 
+// Error setup
+
 const ErrorPage = () => {
   return (
     <div className="error-page">

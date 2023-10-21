@@ -6,7 +6,7 @@ import { ClipLoader } from 'react-spinners';
 import '../../css/Recipes.css'; 
 
 
-// random recipes setup
+// Random recipes setup
 
 function RandomRecipes() {
   const [recipes, setRecipes] = useState([]);
@@ -29,7 +29,7 @@ function RandomRecipes() {
         setLoading(false); 
       })
       .catch((error) => {
-        console.error('Errore nella chiamata API:', error);
+        console.error('Error API:', error);
         navigate('/error');
       });
   }, [navigate]);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ClipLoader } from 'react-spinners';
 
-//Loader setup
+// Loader setup
 
 const Loader = () => {
   return (
