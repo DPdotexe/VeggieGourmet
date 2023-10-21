@@ -6,11 +6,16 @@ import { ClipLoader } from 'react-spinners';
 import '../../css/Recipes.css';
 import NoResults from '../NoResults/NoResults'; 
 
+
+//recipes setup
+
 function Recipes({ query }) {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
+
+  //API Call with Axios
   useEffect(() => {
     axios
       .get('https://api.spoonacular.com/recipes/complexSearch', {

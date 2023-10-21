@@ -3,6 +3,8 @@ import SearchBar from '../SearchBar/SearchBar';
 import { useNavigate } from 'react-router-dom'; 
 import '../../css/Navbar.css';
 
+//Navbar setup
+
 const Navbar = ({ onSearch }) => {
   const navigate = useNavigate(); 
 

@@ -2,6 +2,8 @@ import React from 'react';
 import { FaGithub } from 'react-icons/fa';
 import '../../css/Footer.css';
 
+// Footer setup
+
 function Footer() {
   return (
     <footer className="footer-container">

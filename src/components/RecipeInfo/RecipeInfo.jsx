@@ -5,12 +5,17 @@ import { FaArrowLeft } from 'react-icons/fa';
 import { ClipLoader } from 'react-spinners';
 import '../../css/RecipeInfo.css';
 
+
+//recipe info setup
+
 function RecipeInfo() {
   const { id } = useParams();
   const [recipeInfo, setRecipeInfo] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
+
+//API Call with Axios
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,7 +35,7 @@ function RecipeInfo() {
         setRecipeInfo(response.data);
         setLoading(false);
       } catch (error) {
-        console.error('Errore nella chiamata API:', error);
+        console.error('Error API:', error);
         setLoading(false);
         navigate('/error');
       }
@@ -68,6 +73,7 @@ function RecipeInfo() {
     </div>
   );
 }
+// ingredients setup
 
 function Ingredients({ ingredients }) {
   return (
@@ -92,6 +98,8 @@ function Ingredients({ ingredients }) {
     )
   );
 }
+
+// recipe steps setup
 
 function RecipeSteps({ steps }) {
   return (

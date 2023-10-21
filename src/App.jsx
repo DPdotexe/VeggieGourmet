@@ -14,7 +14,8 @@ function App() {
   const handleSearch = (query) => {
     setSearchQuery(query);
   };
-
+  
+  // react router
   return (
     <div className={`App ${searchQuery ? 'search-mode' : 'random-mode'}`}>
       <Router>

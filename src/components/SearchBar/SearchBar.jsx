@@ -3,12 +3,14 @@ import { FaSearch } from 'react-icons/fa';
 import '../../css/SearchBar.css';
 import { useNavigate } from 'react-router-dom';
 
+// searchbar setup
+
 function SearchBar({ onSearch }) {
   const [query, setQuery] = useState('');
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
-    setQuery(e.target.value);
+    setQuery(e.target.value); //event target
   };
 
   const handleSearchInputValidation = () => {
@@ -37,7 +39,7 @@ function SearchBar({ onSearch }) {
 
   const handleSearchButtonClick = () => {
     const searchInput = document.getElementById('search-input');
-    handleSearchInputValidation(); // Esegue la validazione prima della ricerca.
+    handleSearchInputValidation(); 
 
     if (!searchInput.validity.customError) {
       const formattedQuery = query.toLowerCase().replace(/\s/g, '');

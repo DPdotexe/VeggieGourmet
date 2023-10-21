@@ -5,10 +5,15 @@ import { FaClock, FaUtensils } from 'react-icons/fa';
 import { ClipLoader } from 'react-spinners';
 import '../../css/Recipes.css'; 
 
+
+// random recipes setup
+
 function RandomRecipes() {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+
+//API Call with Axios
 
   useEffect(() => {
     axios
