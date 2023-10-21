@@ -3,8 +3,8 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaClock, FaUtensils } from 'react-icons/fa';
 import { ClipLoader } from 'react-spinners';
-import '../css/Recipes.css';
-import NoResults from './NoResults'; 
+import '../../css/Recipes.css';
+import NoResults from '../NoResults/NoResults'; 
 
 function Recipes({ query }) {
   const [recipes, setRecipes] = useState([]);

@@ -1,4 +1,4 @@
-
+/*navbar style*/
 .navbar {
   background-color: #008000;
   color: white;
@@ -26,6 +26,9 @@
   height: 30px;
   margin-right: 5px;
 }
+
+/*responsive*/
+
 @media (max-width: 768px) {
   .navbar {
     height: 40px; 

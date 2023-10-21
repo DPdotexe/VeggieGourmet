@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './css/App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Recipes from './components/Recipes';
-import RandomRecipes from './components/RandomRecipes';
-import RecipeInfo from './components/RecipeInfo';
-import Footer from './components/Footer';
-import ErrorPage from './components/ErrorPage';
+import Navbar from './components/Navbar/Navbar';
+import Recipes from './components/Recipes/Recipes';
+import RandomRecipes from './components/RandomRecipes/RandomRecipes';
+import RecipeInfo from './components/RecipeInfo/RecipeInfo';
+import Footer from './components/Footer/Footer';
+import ErrorPage from './components/Error/ErrorPage';
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('');

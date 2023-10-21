@@ -1,7 +1,7 @@
 import React from 'react';
-import SearchBar from './SearchBar';
+import SearchBar from '../SearchBar/SearchBar';
 import { useNavigate } from 'react-router-dom'; 
-import '../css/Navbar.css';
+import '../../css/Navbar.css';
 
 const Navbar = ({ onSearch }) => {
   const navigate = useNavigate(); 

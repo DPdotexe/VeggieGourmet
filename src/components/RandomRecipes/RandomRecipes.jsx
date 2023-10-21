@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaClock, FaUtensils } from 'react-icons/fa';
 import { ClipLoader } from 'react-spinners';
-import '../css/Recipes.css';
+import '../../css/Recipes.css'; 
 
 function RandomRecipes() {
   const [recipes, setRecipes] = useState([]);

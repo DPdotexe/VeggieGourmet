@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
-import '../css/SearchBar.css';
+import '../../css/SearchBar.css';
 import { useNavigate } from 'react-router-dom';
 
 function SearchBar({ onSearch }) {

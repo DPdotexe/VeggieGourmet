@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/NoResults.css'; // Assicurati di avere un file CSS per lo stile
+import '../../css/NoResults.css'; 
 
 function NoResults() {
   return (
