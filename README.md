@@ -14,6 +14,8 @@ VeggieGourmet is a web application that allows users to discover and explore veg
 
 - **React Router**: React Router is used for handling navigation within the application.
 
+- **React Hooks**: For managing state and effects in the application.
+
 - **Axios**: Axios is used to make HTTP requests to the Spoonacular API to fetch recipe data.
 
 - **Spoonacular API**: The Spoonacular API provides the recipe data for the application.
