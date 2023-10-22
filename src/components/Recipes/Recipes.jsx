@@ -3,19 +3,18 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaClock, FaUtensils } from 'react-icons/fa';
 import { ClipLoader } from 'react-spinners';
+import { Helmet } from 'react-helmet'; 
 import './Recipes.css';
-import NoResults from '../NoResults/NoResults'; 
+import NoResults from '../NoResults/NoResults';
 
-
-//recipes setup
+// Recipes setup
 
 function Recipes({ query }) {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-
-  //API Call with Axios
+  // API Call with Axios
   useEffect(() => {
     axios
       .get('https://api.spoonacular.com/recipes/complexSearch', {
@@ -32,17 +31,20 @@ function Recipes({ query }) {
         setLoading(false);
       })
       .catch((error) => {
-        console.error('Errore nella chiamata API:', error);
+        console.error('API Error:', error);
         navigate('/error');
       });
   }, [query, navigate]);
 
   return (
     <div>
+      <Helmet>
+        <title>{query ? `Recipes for "${query}" - VG` : 'Recipes - VG'}</title>
+      </Helmet>
       {loading ? (
         <ClipLoader />
       ) : recipes.length === 0 ? (
-        <NoResults /> 
+        <NoResults />
       ) : (
         <div className="recipe-container">
           {recipes.map((recipe) => (
@@ -50,9 +52,9 @@ function Recipes({ query }) {
               <div className="recipe-card">
                 <h2 className="recipe-title">{recipe.title}</h2>
                 <img
-                 src={recipe.image || '../img/no-image.png'} 
-                alt={recipe.title}
-                className="recipe-image"
+                  src={recipe.image || '../img/no-image.png'}
+                  alt={recipe.title}
+                  className="recipe-image"
                 />
                 <div className="recipe-details">
                   <p><FaClock /> {recipe.readyInMinutes} minutes</p>

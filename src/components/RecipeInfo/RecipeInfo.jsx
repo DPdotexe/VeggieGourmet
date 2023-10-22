@@ -3,19 +3,18 @@ import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import { ClipLoader } from 'react-spinners';
+import { Helmet } from 'react-helmet'; 
 import './RecipeInfo.css';
 
-
-//recipe info setup
+// Recipe info setup
 
 function RecipeInfo() {
   const { id } = useParams();
   const [recipeInfo, setRecipeInfo] = useState(null);
   const [loading, setLoading] = useState(true);
-
   const navigate = useNavigate();
 
-//API Call with Axios
+  // API Call with Axios
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,7 +34,7 @@ function RecipeInfo() {
         setRecipeInfo(response.data);
         setLoading(false);
       } catch (error) {
-        console.error('Error API:', error);
+        console.error('API Error:', error);
         setLoading(false);
         navigate('/error');
       }
@@ -46,6 +45,9 @@ function RecipeInfo() {
 
   return (
     <div className="recipe-container-info">
+      <Helmet>
+        <title>{recipeInfo ? recipeInfo.title : 'Loading...'} - Your Site</title> {/* Set the page title */}
+      </Helmet>
       {loading ? (
         <ClipLoader />
       ) : (
@@ -73,7 +75,8 @@ function RecipeInfo() {
     </div>
   );
 }
-// ingredients setup
+
+// Ingredients setup
 
 function Ingredients({ ingredients }) {
   return (
@@ -99,7 +102,7 @@ function Ingredients({ ingredients }) {
   );
 }
 
-// recipe steps setup
+// Recipe steps setup
 
 function RecipeSteps({ steps }) {
   return (
