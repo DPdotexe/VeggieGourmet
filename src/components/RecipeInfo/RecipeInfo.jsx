@@ -46,7 +46,7 @@ function RecipeInfo() {
   return (
     <div className="recipe-container-info">
       <Helmet>
-        <title>{recipeInfo ? recipeInfo.title : 'Loading...'} - Your Site</title> {/* Set the page title */}
+        <title>{recipeInfo ? recipeInfo.title : 'Loading...'} - VG</title> 
       </Helmet>
       {loading ? (
         <ClipLoader />
