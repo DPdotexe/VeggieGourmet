@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import { ClipLoader } from 'react-spinners';
-import '../../css/RecipeInfo.css';
+import './RecipeInfo.css';
 
 
 //recipe info setup

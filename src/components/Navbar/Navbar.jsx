@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchBar from '../SearchBar/SearchBar';
 import { useNavigate } from 'react-router-dom'; 
-import '../../css/Navbar.css';
+import './Navbar.css';
 
 //Navbar setup
 
